@@ -4,6 +4,11 @@ const cors = require('cors')
 const app = express();
 const server = require('http').Server(app)
 
+if (process.env.NODE_ENV === 'production') {
+
+    app.use(express.static('client/build'));
+
+}
 
 
 const PORT = process.env.PORT || 8080;
@@ -25,14 +30,10 @@ socket.on("disconnect", () => {console.log("Client disconnected") })
 })
 
 
-if (process.env.NODE_ENV === 'production') {
 
-    app.use(express.static('client/build/index.html'));
-
-}
 
 app.get('/',(req, res)=>{
-    app.use(express.static('client/build'));
+    res.send("hello world")
 })
 
 server.listen(PORT,()=>{
