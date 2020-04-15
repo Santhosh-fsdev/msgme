@@ -22,7 +22,7 @@ socket.on("disconnect", () => {console.log("Client disconnected") })
 
 if (process.env.NODE_ENV === 'production') {
 
-    app.use(express.static('/client/build'));
+    app.use(express.static('client/build'));
 }
 app.get("*", (req, res) => {
     if (process.env.NODE_ENV === 'production') {
