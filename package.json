@@ -1,0 +1,22 @@
+{
+  "name": "santxt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "dev": "concurrently \" nodemon server\" \"cd client && npm start\"",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js"
+  },
+  "author": "Santhosh kumar",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "socket-io": "^1.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
