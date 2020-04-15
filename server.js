@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 const io = require('socket.io')(PORT);
 
 io.on("connection", (socket) => {
-    console.log('Connection connected');
+    console.log('Connection connected on port'+ PORT );
     socket.on('text', (data)=>{
         console.log(data)
 
@@ -24,12 +24,10 @@ if (process.env.NODE_ENV === 'production') {
 
     app.use(express.static('client/build'));
 }
-app.get("*", (req, res) => {
-    if (process.env.NODE_ENV === 'production') {
+app.get('/',(req,res)=>{
+    app.use(express.static('client/build'));
+})
 
-        app.use(express.static('client/build'));
-    }
-  });
 
 
 
