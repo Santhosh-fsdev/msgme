@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cd client && npm run build",
+    "build1": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "dev": "concurrently \" nodemon server\" \"cd client && npm start\"",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build1",
     "start": "node server.js"
   },
   "author": "Santhosh kumar",
