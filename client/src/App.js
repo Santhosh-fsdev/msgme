@@ -11,6 +11,7 @@ socket.on('connect', () => {
   console.log("connected")
 });
 
+
 function App() {
 
   const [text, setText] = useState('');
